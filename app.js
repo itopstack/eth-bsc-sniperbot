@@ -117,7 +117,7 @@ async function sending(){
   },6000);
   setTimeout(function(){
   console.log(
-    "🏗️  Error - please double check key and address"
+    "🏗️  Error - please double check env configurations"
   );
 },8000);
       const account = account_from.recipient
