@@ -25,9 +25,9 @@ Then edit env.json and save your changes
     "AMOUNT_TO_BUY": "0.5" 
 }
 ``` 
-* RPC = your NODE url if a custom node or ETH
+* RPC = your NODE url if a custom node or ETH. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
 
-* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
+* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc. 
 
 * RECIPIENT = Your address to receive tokens at 
 
