@@ -27,7 +27,7 @@ Then edit env.json and save your changes
 ``` 
 * RPC = your NODE url if a custom node or ETH
 
-* CHAIN = the Chain of your target network if applicable
+* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc
 
 * RECIPIENT = Your address to receive tokens at 
 
@@ -35,9 +35,9 @@ Then edit env.json and save your changes
 
 * CONTRACT_TO_SNIPE =  The target contract address you want to snipe
 
-* MULTIPLIER: = How many transactions to submit, ie buy 5 times
+* MULTIPLIER: = How many transactions to submit, ie buy 1 time or 5 times etc
 
-* AMOUNT_TO_BUY = amount in either ETHER or BNB to buy depending on your NODE
+* AMOUNT_TO_BUY = amount in either ETHER or BNB to buy depending on your NODE, accepts decimals
 
 
 
