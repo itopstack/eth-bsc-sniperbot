@@ -27,7 +27,7 @@ Then edit env.json and save your changes
 ``` 
 * RPC = your NODE url if a custom node or ETH
 
-* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc
+* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
 
 * RECIPIENT = Your address to receive tokens at 
 
