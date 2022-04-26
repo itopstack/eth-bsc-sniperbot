@@ -141,11 +141,3 @@ async function sending(){
 
 }
 sending();
-
-
-
-  
-  
- 
- 
- 
