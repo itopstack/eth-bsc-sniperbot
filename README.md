@@ -22,6 +22,7 @@ Then edit env.json and save your changes
     "PRIVATE_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxx",   
     "CONTRACT_TO_SNIPE": "0x000000000000000", 
     "MULTIPLIER": "1",
+    "GAS_LIMIT": "1000000",
     "AMOUNT_TO_BUY": "0.5" 
 }
 ``` 
@@ -36,6 +37,7 @@ Then edit env.json and save your changes
 * CONTRACT_TO_SNIPE =  The target contract address you want to snipe
 
 * MULTIPLIER: = How many transactions to submit, ie buy 1 time or 5 times etc
+* GAS_LIMIT: = best to leave it at default 1000000
 
 * AMOUNT_TO_BUY = amount in either ETHER or BNB to buy depending on your NODE, accepts decimals
 
