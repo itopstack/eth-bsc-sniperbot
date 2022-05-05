@@ -24,6 +24,13 @@ Then edit env.json and save your changes
     "MULTIPLIER": "1",
     "GAS_LIMIT": "1000000",
     "AMOUNT_TO_BUY": "0.5" 
+    "PROFITPERCENT": 100,      // 100% profit
+    "STOPLOSSPERCENT": 10,  // 10% loss
+    "percentOfTokensToSellProfit": 75, // sell 75% when profit is reached
+    "percentOfTokensToSellLoss": 100, // sell 100% when stoploss is reached 
+    "trailingStopLossPercent": 15, // 15% trailing stoploss
+    "maxLiquidity": 400,	        // max Liquidity BNB
+    "minLiquidity": 100 	
 }
 ``` 
 * RPC = your NODE url if a custom node or ETH. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
