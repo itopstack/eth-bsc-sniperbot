@@ -17,19 +17,19 @@ Then edit env.json and save your changes
 ```bash
 {
     "RPC": "https://bsc-dataseed.binance.org/", 
-    "CHAIN": "56", 
+    "CHAIN": 56, 
     "RECIPIENT": "0x00000000000000000000000000",  
     "PRIVATE_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxx",   
     "CONTRACT_TO_SNIPE": "0x000000000000000", 
     "MULTIPLIER": "1",
     "GAS_LIMIT": "1000000",
     "AMOUNT_TO_BUY": "0.5" 
-    "PROFITPERCENT": 100,      // 100% profit
-    "STOPLOSSPERCENT": 10,  // 10% loss
-    "percentOfTokensToSellProfit": 75, // sell 75% when profit is reached
-    "percentOfTokensToSellLoss": 100, // sell 100% when stoploss is reached 
-    "trailingStopLossPercent": 15, // 15% trailing stoploss
-    "maxLiquidity": 400,	        // max Liquidity BNB
+    "PROFITPERCENT": 100,      
+    "STOPLOSSPERCENT": 10,  
+    "percentOfTokensToSellProfit": 75, 
+    "percentOfTokensToSellLoss": 100, 
+    "trailingStopLossPercent": 15, 
+    "maxLiquidity": 400,	      
     "minLiquidity": 100 	
 }
 ``` 
@@ -47,7 +47,13 @@ Then edit env.json and save your changes
 * GAS_LIMIT: = best to leave it at default 1000000
 
 * AMOUNT_TO_BUY = amount in either ETHER or BNB to buy depending on your NODE, accepts decimals
-
+* PROFITPERCENT= profit to take which will initiate a sell
+* STOPLOSSPERCENT = loss at which to initiate a sell
+* percentOfTokensToSellProfit= sell % when profit is reached
+* percentOfTokensToSellLoss = sell % when stoploss is reached 
+* trailingStopLossPercent= % trailing stoploss
+* maxLiquiditymax = max Liquidity in BNB the contract needs to have for the buy to initiate
+* minLiquidity = min Liquidity in BNB the contract needs to have for the buy to initiate
 
 
 
