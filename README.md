@@ -64,6 +64,7 @@ Run Powershell or a terminal
   npm i
   node app.js
 ```
+![image](https://user-images.githubusercontent.com/104032344/167022621-84dd939c-b75b-48f6-9c06-70c36aa3fe4a.png)
 
 
     <h1 align="center">Hi 👋, I'm George</h1>
