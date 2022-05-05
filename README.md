@@ -33,7 +33,7 @@ Then edit env.json and save your changes
     "minLiquidity": 100 	
 }
 ``` 
-* RPC = your NODE url if a custom node or ETH. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
+* RPC = your NODE url. Use the default BSC Dataseed to test it.  if a custom node or ETH. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
 
 * CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc. 
 
