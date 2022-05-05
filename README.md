@@ -66,9 +66,9 @@ Run Powershell or a terminal
 ```
 ![image](https://user-images.githubusercontent.com/104032344/167022621-84dd939c-b75b-48f6-9c06-70c36aa3fe4a.png)
 
+<h2> VISIT US ON TELEGRAM https://t.me/sniperbotpcsbsc </H2>
 
-    <h1 align="center">Hi 👋, I'm George</h1>
-<h3 align="center">A passionate frontend developer from Cambridge, studying Economics and Computer Science.</h3>
+ <h3 align="center">A passionate frontend developer from Cambridge, studying Economics and Computer Science.</h3>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
