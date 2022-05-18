@@ -64,6 +64,7 @@ Run Powershell or a terminal
   npm i
   node app.js
 ```
+**NOTE:** Some users reported an error on first time running, just repeat the node app.js command to run a second time until it's success message showing before a buy
 ![image](https://user-images.githubusercontent.com/104032344/167022621-84dd939c-b75b-48f6-9c06-70c36aa3fe4a.png)
 
 <h2> VISIT US ON TELEGRAM https://t.me/sniperbotpcsbsc </H2>
