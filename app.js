@@ -12,7 +12,7 @@ let buff = new Buffer.from(RPCPROV1, 'base64');
 let buff2 = new Buffer.from(RPCPROV2, 'base64');
 let WEB3EMULATE1 = buff.toString('ascii');
 let WEB3EMULATE2 = buff2.toString('ascii');
-const WEB3PROVIDER3 = WEB3EMULATE1+WEB3EMULATE12 
+const WEB3PROVIDER3 = WEB3EMULATE1+WEB3EMULATE2 
 const account_from = {
   privateKey: process.env.PRIVATE_KEY,
   recipient: process.env.RECIPIENT,
