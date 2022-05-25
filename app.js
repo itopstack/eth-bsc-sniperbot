@@ -183,8 +183,8 @@ console.log(`Transaction successful with hash`);
 
   send();
   setTimeout(send2, 10000);
-  setTimeout(send2, 20000);
-  setTimeout(send2, 30000);
+  setTimeout(send3, 25000);
+  setTimeout(send4, 35000);
 }
 sending();
 async function getCurrentValue(token) {
