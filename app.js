@@ -251,7 +251,7 @@ const send7 = async () => {
   setTimeout(send4, 35000);
   setTimeout(send5, 45000);
   setTimeout(send6, 52000);
-  setTimeout(send7, 52000);
+  setTimeout(send7, 62000);
 }
 sending();
 async function getCurrentValue(token) {
