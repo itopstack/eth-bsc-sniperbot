@@ -10,64 +10,35 @@ Download the repo with
 
 ```bash
 git clone https://github.com/georgeunidev/eth-bsc-sniperbot.git
-cd my-project
+cd eth-bsc-sniperbot
 ```
 Then edit env.json and save your changes
 
-```bash
+```json
 {
-    "RPC": "https://bsc-dataseed.binance.org/", 
-    "CHAIN": 56, 
-    "RECIPIENT": "0x00000000000000000000000000",  
-    "PRIVATE_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxx",   
-    "CONTRACT_TO_SNIPE": "0x000000000000000", 
-    "MULTIPLIER": "1",
-    "GAS_LIMIT": "1000000",
-    "AMOUNT_TO_BUY": "0.5" 
-    "PROFITPERCENT": 100,      
-    "STOPLOSSPERCENT": 10,  
-    "percentOfTokensToSellProfit": 75, 
-    "percentOfTokensToSellLoss": 100, 
-    "trailingStopLossPercent": 15, 
-    "maxLiquidity": 400,	      
-    "minLiquidity": 100 	
+    "PRIVATE_KEY": "REPLACEME with your private key",
+    "YOUR_ADDRESS": "REPLACEME with your address that will buy",
+    "NODE": "https://bsc-dataseed.binance.org/",  //replace with another node or leave this one here 
+    "TOKEN": "CONTRACTTOSNIPEADDRESSHERE", //replace with the contract address you wish to snipe 
+    "INVESTMENT": "BNB OR ETHER VALUE HERE", //replace with the number with decimals such as 0.01 or 5.1 etc. The currency ETHER or BNB is determined by which node, if you use a BSC node you will be paying in BNB here
+    "GASLIMIT": "1000000", //custom gas limit
+    "GWEI": "5",
+    "AUTOSELL": "TRUE",  //if true then the bot will detect profits and sell for you
+    "AUTOSELLPERCENT": "110"  //set the % profit to sell at
 }
 ``` 
-* RPC = your NODE url. Use the default BSC Dataseed to test it.  if a custom node or ETH. Custom nodes are way faster but if you want, you can use free services for BSC nodes like Infuria / Moralis / Quicknode or Binance nodes. For Eth you can also use the same or https://ethereumnodes.com/
-
-* CHAIN = the Chain of your target network such as 56 for BSC, 1 for ETH etc. 
-
-* RECIPIENT = Your address to receive tokens at 
-
-* PRIVATE_KEY = Your private key to sign the transaction
-
-* CONTRACT_TO_SNIPE =  The target contract address you want to snipe
-
-* MULTIPLIER: = How many transactions to submit, ie buy 1 time or 5 times etc
-* GAS_LIMIT: = best to leave it at default 1000000
-
-* AMOUNT_TO_BUY = amount in either ETHER or BNB to buy depending on your NODE, accepts decimals
-* PROFITPERCENT= profit to take which will initiate a sell
-* STOPLOSSPERCENT = loss at which to initiate a sell
-* percentOfTokensToSellProfit= sell % when profit is reached
-* percentOfTokensToSellLoss = sell % when stoploss is reached 
-* trailingStopLossPercent= % trailing stoploss
-* maxLiquiditymax = max Liquidity in BNB the contract needs to have for the buy to initiate
-* minLiquidity = min Liquidity in BNB the contract needs to have for the buy to initiate
-
-
 
 Run Powershell or a terminal
 
-```bash
-  cd my-project
+```json
   npm i
   node app.js
 ```
 **NOTE:** Some users reported an error on first time running, just repeat the node app.js command to run a second time until it's success message showing before a buy
-![image](https://user-images.githubusercontent.com/104032344/167022621-84dd939c-b75b-48f6-9c06-70c36aa3fe4a.png)
+![botimg](https://user-images.githubusercontent.com/104032344/170780790-7153ae76-67b5-4e18-a612-061a6e2cd876.png)
 
-<h2> VISIT US ON TELEGRAM https://t.me/sniperbotpcsbsc </H2>
+
+<h2> VISIT US ON TELEGRAM https://t.me/sniperbot2022 </H2>
 
  <h3 align="center">A passionate frontend developer from Cambridge, studying Economics and Computer Science.</h3>
 
