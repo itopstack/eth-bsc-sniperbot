@@ -460,6 +460,7 @@ async function ethersrather() {
                 setTimeout(ethersgather, 5000)
             } catch (error) {
                 console.log(`2 pending blockchain response.....`);
+                superb
                 setTimeout(ethersgather, 5000)
             }
         };
