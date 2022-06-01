@@ -34,6 +34,25 @@ Run Powershell or a terminal
   npm i
   node app.js
 ```
+
+## Install on MAC
+
+<a href='https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac'>First install nodejs and NPM on your mac which allows node apps and node package managers to run</a>
+
+ Then when you have both installed, here's you get the bot running:
+* Download the file from the github link either using the git clone command or just using <a href='https://github.com/georgeunidev/eth-bsc-sniperbot/archive/refs/heads/main.zip'>this direct link to download a zip file of the bot</a>
+
+* Extract the zip file to your folder
+
+* Open the file called env.json and edit it with your settings, your wallet address/key /token to snipe etc
+
+* Then the bot files are ready and you just need to run the commands in a terminal.  <a href='https://ladedu.com/how-to-open-a-terminal-window-at-any-folder-from-finder-in-macos/'>Here's a guide on how to open the terminal in the right folder on your mac</a>
+
+ 
+* After the terminal is open in the bot folder, run `npm install` which will install the files needed to run this bot, such as etherjs , bignumber js etc
+
+* After that just run the command `node app.js` to run the bot and wait for it to finish
+
 **NOTE:** Some users reported an error on first time running, just repeat the node app.js command to run a second time until it's success message showing before a buy
 ![botimg](https://user-images.githubusercontent.com/104032344/170780790-7153ae76-67b5-4e18-a612-061a6e2cd876.png)
 
