@@ -24,7 +24,10 @@ Then edit env.json and save your changes
     "GASLIMIT": "1000000", //custom gas limit
     "GWEI": "5",
     "AUTOSELL": "TRUE",  //if true then the bot will detect profits and sell for you
-    "AUTOSELLPERCENT": "110"  //set the % profit to sell at
+    "AUTOSELLPERCENT": "110",  //set the % profit to sell at
+    "HONEYPOTCHECK": "TRUE", //if honeypot detection is on or off
+    "MINLIQ": "1", //contract must have this amount of liq at minimum such as 1 eth or 1 bnb
+    "MAXLIQ": "100" //contract must have this amount of liq at maximum such as 100 eth or 100 bnb
 }
 ``` 
 
