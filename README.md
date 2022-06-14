@@ -20,6 +20,7 @@ Then edit env.json and save your changes
     "YOUR_ADDRESS": "REPLACEME with your address that will buy",
     "NODE": "https://bsc-dataseed.binance.org/",  //replace with another node or leave this one here 
     "TOKEN": "CONTRACTTOSNIPEADDRESSHERE", //replace with the contract address you wish to snipe 
+    "presale": "true", //if the snipe is presale or not
     "INVESTMENT": "BNB OR ETHER VALUE HERE", //replace with the number with decimals such as 0.01 or 5.1 etc. The currency ETHER or BNB is determined by which node, if you use a BSC node you will be paying in BNB here
     "GASLIMIT": "1000000", //custom gas limit
     "GWEI": "5",
@@ -27,7 +28,7 @@ Then edit env.json and save your changes
     "AUTOSELLPERCENT": "110",  //set the % profit to sell at
     "HONEYPOTCHECK": "TRUE", //if honeypot detection is on or off
     "MINLIQ": "1", //contract must have this amount of liq at minimum such as 1 eth or 1 bnb
-    "MAXLIQ": "100" //contract must have this amount of liq at maximum such as 100 eth or 100 bnb
+    "MAXLIQ": "150" //contract must have this amount of liq at maximum such as 100 eth or 100 bnb
 }
 ``` 
 
