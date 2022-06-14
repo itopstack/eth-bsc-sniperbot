@@ -1,14 +1,5 @@
 var Web3 = require('web3'); 
 let web3 = null;
-let tokenName = '';
-let tokenSymbol = '';
-let tokenDecimals = 0;
-let maxSell = 0;
-let maxTXAmount = 0;
-let bnbIN = 1000000000000000000;
-let maxTxBNB = null;
-
-
 const HttpApi = process.env.BscHttpApi || 'https://bsc-dataseed1.binance.org:443';
 web3 = new Web3(HttpApi);
 
